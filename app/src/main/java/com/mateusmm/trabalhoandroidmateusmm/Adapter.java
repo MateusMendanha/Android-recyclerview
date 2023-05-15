@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -11,13 +12,16 @@ import androidx.recyclerview.widget.RecyclerView;
 public class Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private static class GridViewHolder extends RecyclerView.ViewHolder {
+        ImageView imageView;
         TextView txt_label;
 
-        public GridViewHolder(View itemView){
+        public GridViewHolder(View itemView) {
             super(itemView);
+            imageView = itemView.findViewById(R.id.image_view);
             txt_label = (TextView) itemView.findViewById(R.id.txt_label);
         }
     }
+
     private class ListViewHolder extends RecyclerView.ViewHolder {
         TextView txt_label;
 
@@ -26,6 +30,7 @@ public class Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             txt_label = (TextView) itemView.findViewById(R.id.txt_label);
         }
     }
+
     private Context context;
     private LayoutInflater layoutInflater;
 
@@ -42,11 +47,13 @@ public class Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     public int getItemCount() {
         return itens.size();
     }
+
     @Override
     public int getItemViewType(int position) {
         return itens.get(position).getType();
 
     }
+
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         if (viewType == Abstract.GRID_TYPE) {
@@ -69,6 +76,7 @@ public class Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             Grid item = (Grid) itens.get(position);
             GridViewHolder holder = (GridViewHolder) viewHolder;
             holder.txt_label.setText(item.getTexto());
+            holder.imageView.setImageResource(item.getImagem());
         } else {
             List item = (List) itens.get(position);
             ListViewHolder holder = (ListViewHolder) viewHolder;

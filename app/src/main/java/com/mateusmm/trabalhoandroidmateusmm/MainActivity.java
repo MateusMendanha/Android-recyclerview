@@ -20,14 +20,14 @@ public class MainActivity extends AppCompatActivity {
 
 
         itens = new ArrayList<>();
-        itens.add(new Grid("Filme1"));
-        itens.add(new Grid("Filme2"));
-        itens.add(new Grid("Filme3"));
-        itens.add(new Grid("Filme4"));
-        itens.add(new com.mateusmm.trabalhoandroidmateusmm.List("Filme1"));
-        itens.add(new com.mateusmm.trabalhoandroidmateusmm.List("Filme2"));
-        itens.add(new com.mateusmm.trabalhoandroidmateusmm.List("Filme3"));
-        itens.add(new com.mateusmm.trabalhoandroidmateusmm.List("Filme4"));
+        itens.add(new Grid("Filme1", R.drawable.a));
+        itens.add(new Grid("Filme2", R.drawable.b));
+        itens.add(new Grid("Filme3", R.drawable.c));
+        itens.add(new Grid("Filme4", R.drawable.d));
+        itens.add(new com.mateusmm.trabalhoandroidmateusmm.List("Andrew Russell Garfield"));
+        itens.add(new com.mateusmm.trabalhoandroidmateusmm.List("Tom Holland"));
+        itens.add(new com.mateusmm.trabalhoandroidmateusmm.List("Cillian Murphy"));
+        itens.add(new com.mateusmm.trabalhoandroidmateusmm.List("Robert Downey Jr."));
 
 
         GridLayoutManager manager = new GridLayoutManager(this, 2);
